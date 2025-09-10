@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bloomify - Flower Shop</title>
+  <style>
+    /* Global Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #fff0f5, #ffe4e1);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    .main-header {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(12px);
+      padding: 12px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 0 12px rgba(255, 105, 180, 0.5);
+    }
+
+    .nav-links a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #ff1493;
+      font-weight: 600;
+      position: relative;
+      transition: 0.3s ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background: #ff69b4;
+      bottom: -5px;
+      left: 0;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #ff69b4;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .quote-btn {
+      background: linear-gradient(135deg, #ff69b4, #ff1493);
+      color: #fff;
+      border: none;
+      padding: 10px 22px;
+      font-weight: 600;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
+      transition: 0.3s;
+    }
+
+    .quote-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(255, 20, 147, 0.6);
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      background: url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1600&q=80") no-repeat center center/cover;
+      color: #fff;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-size: 56px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+      color: #fce4ec;
+    }
+
+    .hero .btn {
+      background: #ff69b4;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 30px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .hero .btn:hover {
+      background: #ff1493;
+      box-shadow: 0 0 20px rgba(255, 20, 147, 0.5);
+    }
+
+    /* Features */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .feature-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: 0.3s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(255, 20, 147, 0.2);
+    }
+
+    .feature-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: contain;
+      background: #fff;
+      padding: 10px;
+    }
+
+
+    .feature-card h3 {
+      padding: 15px;
+      font-size: 20px;
+      color: #ff1493;
+    }
+
+    .feature-card p {
+      padding: 0 15px 20px;
+      color: #555;
+      font-size: 15px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #ffb6c1;
+      color: #fff;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="container">
+      <div>
+        <img src="https://img.freepik.com/free-vector/lotus-flower-logo-icon-linear-style_126523-708.jpg" alt="logo"
+          class="logo-img">
+      </div>
+      <nav class="nav-links">
+        <a href="/">Home</a>
+        <a href="/Shop">Shop</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/faq">FAQ</a>
+      </nav>
+      <button class="quote-btn">Order Now</button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Fresh Flowers Delivered Daily</h1>
+      <p>Bloomify brings you the finest bouquets, roses, and floral arrangements for every occasion.</p>
+      <button class="btn">Explore Collection</button>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="features">
+    <div class="feature-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp6QSYyeKZ1T_PeeJ_fbYlrTvmsMwev7hr3w&s"
+        alt="Bouquet">
+      <h3>Elegant Bouquets</h3>
+      <p>Hand-picked flowers arranged beautifully for gifting and celebrations.</p>
+    </div>
+    <div class="feature-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTrBvpa6DTlxmRAo25nMWliR4nGqbwFTxhLQ&s"
+        alt="Roses">
+      <h3>Luxury Roses</h3>
+      <p>Our premium roses are perfect to express love and affection.</p>
+    </div>
+    <div class="feature-card">
+      <img
+        src="https://media.istockphoto.com/id/471906412/photo/beautiful-table-setting-for-an-wedding-reception-or-an-event.jpg?s=612x612&w=0&k=20&c=knlIBspy-ZKuQV7bUVr_eclJmyC24ShNAva_Jh9Rwfc="
+        alt="Decor">
+      <h3>Event Decor</h3>
+      <p>We design wedding & party flower decorations with elegance and style.</p>
+    </div>
+    <div class="feature-card">
+      <img src="https://t3.ftcdn.net/jpg/04/28/59/32/360_F_428593284_FxRk9b3YVlnoPVjAGHMGXw7nVNmfdBCj.jpg"
+        alt="Indoor Plants">
+      <h3>Indoor Plants</h3>
+      <p>Green plants for homes & offices to bring positivity and freshness.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Bloomify Flower Shop. All rights reserved.
+  </footer>
+
+</body>
+
+</html>

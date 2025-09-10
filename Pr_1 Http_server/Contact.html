@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - Bloom & Bliss</title>
+  <style>
+      * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #fff0f5, #ffe4e1);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    .main-header {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(12px);
+      padding: 12px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 0 12px rgba(255, 105, 180, 0.5);
+    }
+
+    .nav-links a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #ff1493;
+      font-weight: 600;
+      position: relative;
+      transition: 0.3s ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background: #ff69b4;
+      bottom: -5px;
+      left: 0;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #ff69b4;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .quote-btn {
+      background: linear-gradient(135deg, #ff69b4, #ff1493);
+      color: #fff;
+      border: none;
+      padding: 10px 22px;
+      font-weight: 600;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
+      transition: 0.3s;
+    }
+
+    .quote-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(255, 20, 147, 0.6);
+    }
+
+    /*Contact Section */
+    .contact-wrapper {
+      max-width: 1100px;
+      margin: 80px auto;
+      padding: 50px;
+      background: #fff0f6;
+      border-radius: 20px;
+      border: 2px dashed #ffb6c1;
+      box-shadow: 0 0 25px rgba(255, 182, 193, 0.2);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 50px;
+    }
+
+    .contact-info {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .contact-info h1 {
+      font-size: 36px;
+      color: #ff69b4;
+      margin-bottom: 10px;
+    }
+
+    .contact-info p {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .contact-info a {
+      color: #ff69b4;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    .social-icons i {
+      font-size: 22px;
+      margin-right: 15px;
+      color: #ff69b4;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .social-icons i:hover {
+      transform: scale(1.2);
+      color: #d63384;
+    }
+
+    .contact-form {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .form-row input {
+      flex: 1;
+    }
+
+    input, textarea {
+      padding: 12px 16px;
+      border: 1px solid #ffb6c1;
+      border-radius: 8px;
+      font-size: 16px;
+      background: #fff;
+      color: #444;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #ff69b4;
+      box-shadow: 0 0 8px rgba(255,105,180,0.3);
+      outline: none;
+    }
+
+    .hero .btn {
+      background: #ff69b4;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 30px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .hero .btn:hover {
+      background: #ff1493;
+      box-shadow: 0 0 20px rgba(255, 20, 147, 0.5);
+    }
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #ffb6c1;
+      color: #fff;
+      margin-top: 80px;
+    }
+
+    @media (max-width: 900px) {
+      .contact-wrapper {
+        flex-direction: column;
+        padding: 40px 30px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .form-row {
+        flex-direction: column;
+      }
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="container">
+      <div>
+        <img src="https://img.freepik.com/free-vector/lotus-flower-logo-icon-linear-style_126523-708.jpg" alt="logo" class="logo-img">
+      </div>
+      <nav class="nav-links">
+        <a href="/">Home</a>
+        <a href="/Shop">Shop</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/faq">FAQ</a>
+      </nav>
+      <button class="quote-btn">Order Now</button>
+    </div>
+  </header>
+
+  <!-- Contact Section -->
+  <section class="contact-wrapper">
+    <div class="contact-info">
+      <h1>Get in Touch</h1>
+      <p>We’d love to hear from you! Whether it’s an order, event, or just a kind hello 🌸</p>
+      <p>📧 <a href="mailto:bloombliss@gmail.com">bloombliss@gmail.com</a></p>
+      <p>📞 <a href="tel:+919999999999">+91 99999 99999</a></p>
+      <div class="social-icons">
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-pinterest"></i>
+        <i class="fab fa-twitter"></i>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <form onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <input type="text" placeholder="First Name" required />
+          <input type="text" placeholder="Last Name" required />
+        </div>
+        <input type="email" placeholder="Email *" required />
+        <textarea rows="5" placeholder="Your Message..." required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Bloom & Bliss Flower Shop. All rights reserved.
+  </footer>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      alert("✅ Your message has been sent successfully!");
+    }
+  </script>
+</body>
+</html>

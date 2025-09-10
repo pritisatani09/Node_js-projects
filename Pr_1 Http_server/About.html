@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - Bloom & Bliss</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #fff0f5, #ffe4e1);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    .main-header {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(12px);
+      padding: 12px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 0 12px rgba(255, 105, 180, 0.5);
+    }
+
+    .nav-links a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #ff1493;
+      font-weight: 600;
+      position: relative;
+      transition: 0.3s ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background: #ff69b4;
+      bottom: -5px;
+      left: 0;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #ff69b4;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .quote-btn {
+      background: linear-gradient(135deg, #ff69b4, #ff1493);
+      color: #fff;
+      border: none;
+      padding: 10px 22px;
+      font-weight: 600;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
+      transition: 0.3s;
+    }
+
+    .quote-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(255, 20, 147, 0.6);
+    }
+
+    /* About Section */
+    .about-container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1100px;
+      margin: 100px auto;      
+      padding: 0 30px;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .about-content {
+      flex: 2;
+      min-width: 280px;
+    }
+
+    .about-content h1 {
+      font-size: 36px;
+      color: #ff69b4;
+      margin-bottom: 10px;
+    }
+
+    .about-content h3 {
+      color: #ff85a2;
+      margin-bottom: 20px;
+    }
+
+    .about-content p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .skill-tag {
+      background: #ffe4ec;
+      color: #ff69b4;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      box-shadow: 0 0 8px rgba(255, 105, 180, 0.15);
+      transition: 0.3s ease;
+    }
+
+    .skill-tag:hover {
+      background: #ff69b4;
+      color: #fff;
+      box-shadow: 0 0 12px rgba(255, 105, 180, 0.4);
+    }
+
+    .about-image img {
+      width: 320px;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 3px solid #ff69b4;
+      box-shadow: 0 0 25px rgba(255, 105, 180, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .about-image img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 35px rgba(255, 105, 180, 0.5);
+    }
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #ffb6c1;
+  color: #fff;
+  margin-top: 60px;
+}
+  </style>
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="container">
+       <div>
+        <img src="https://img.freepik.com/free-vector/lotus-flower-logo-icon-linear-style_126523-708.jpg" alt="logo" class="logo-img">
+      </div>
+      <nav class="nav-links">
+        <a href="/">Home</a>
+        <a href="/Shop">Shop</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/faq">FAQ</a>
+      </nav>
+      <button class="quote-btn">Order Now</button>
+    </div>
+  </header>
+
+  <section class="about-container">
+    <div class="about-image">
+      <img src="https://res.cloudinary.com/interflora/f_auto,q_auto,t_pnopt9prodlp/products/p-regal-blossom-389731-m.jpg" alt="Flower Bouquet" />
+    </div>
+    <div class="about-content">
+      <h1>Bloom & Bliss</h1>
+      <h3>Fresh Flowers, Delivered with Love</h3>
+      <p>
+        Welcome to <b>Bloom & Bliss</b> – your trusted flower boutique for every occasion.  
+        From elegant wedding bouquets to vibrant birthday arrangements, we craft floral designs that spread happiness and love.  
+        Our flowers are handpicked fresh daily, ensuring that every bouquet tells a beautiful story.
+      </p>
+
+      <div class="skills">
+        <div class="skill-tag">Wedding Bouquets</div>
+        <div class="skill-tag">Event Decoration</div>
+        <div class="skill-tag">Home Delivery</div>
+        <div class="skill-tag">Custom Arrangements</div>
+        <div class="skill-tag">Festive Hampers</div>
+        <div class="skill-tag">Corporate Gifting</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Bloom & Bliss Flower Shop. All rights reserved.
+  </footer>
+</body>
+</html>

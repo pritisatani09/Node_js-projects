@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bloomify - FAQ</title>
+  <style>
+    /* Global Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #fff0f5, #ffe4e1);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    .main-header {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(12px);
+      padding: 12px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 0 12px rgba(255, 105, 180, 0.5);
+    }
+
+    .nav-links a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #ff1493;
+      font-weight: 600;
+      position: relative;
+      transition: 0.3s ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background: #ff69b4;
+      bottom: -5px;
+      left: 0;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #ff69b4;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .quote-btn {
+      background: linear-gradient(135deg, #ff69b4, #ff1493);
+      color: #fff;
+      border: none;
+      padding: 10px 22px;
+      font-weight: 600;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
+      transition: 0.3s;
+    }
+
+    .quote-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(255, 20, 147, 0.6);
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      background: url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1600&q=80") no-repeat center center/cover;
+      color: #fff;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #fce4ec;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .faq-card {
+      background: white;
+      border-radius: 14px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+      transition: 0.3s;
+    }
+
+    .faq-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(255, 20, 147, 0.2);
+    }
+
+    .faq-card h3 {
+      color: #ff1493;
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .faq-card p {
+      color: #555;
+      font-size: 15px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #ffb6c1;
+      color: #fff;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="container">
+      <div>
+        <img src="https://img.freepik.com/free-vector/lotus-flower-logo-icon-linear-style_126523-708.jpg" alt="logo" class="logo-img">
+      </div>
+      <nav class="nav-links">
+        <a href="/">Home</a>
+        <a href="/Shop">Shop</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/faq">FAQ</a>
+      </nav>
+      <button class="quote-btn">Order Now</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Frequently Asked Questions</h1>
+      <p>Your queries about Bloomify answered here.</p>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="faq-card">
+      <h3>🌸 How can I place an order?</h3>
+      <p>You can order flowers directly from our website by clicking on “Order Now” or visiting the Shop page.</p>
+    </div>
+    <div class="faq-card">
+      <h3>🚚 Do you offer same-day delivery?</h3>
+      <p>Yes! Orders placed before 2 PM are eligible for same-day delivery within the city.</p>
+    </div>
+    <div class="faq-card">
+      <h3>💳 What payment methods do you accept?</h3>
+      <p>We accept all major debit/credit cards, UPI, and digital wallets.</p>
+    </div>
+    <div class="faq-card">
+      <h3>🌿 Can I customize my bouquet?</h3>
+      <p>Absolutely! You can choose your favorite flowers and our florists will arrange them beautifully.</p>
+    </div>
+    <div class="faq-card">
+      <h3>📞 How can I contact support?</h3>
+      <p>You can reach us via the Contact page or call our customer support number.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Bloomify Flower Shop. All rights reserved.
+  </footer>
+
+</body>
+
+</html>
