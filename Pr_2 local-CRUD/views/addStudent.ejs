@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add Book</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: #f2f4f8;
+      color: #333;
+    }
+
+    /* ---------- HEADER ---------- */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 50px;
+      background: #667eee;
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 30px;
+      font-weight: 700;
+      color: #ffffff;
+      text-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+      letter-spacing: 1px;
+      transition: transform 0.3s ease;
+      text-decoration: none;
+    }
+
+    .logo:hover {
+      transform: scale(1.05);
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #f9f9f9;
+      font-weight: 500;
+      padding: 8px 14px;
+      border-radius: 8px;
+      transition: 0.3s ease;
+    }
+
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: #ffe98a;
+    }
+
+    .add-btn {
+      background: #ffffff;
+      color: #2d68ff;
+      padding: 10px 18px;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+      transition: 0.3s ease;
+    }
+
+    .add-btn:hover {
+      background: #e9efff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+    }
+
+    /* ---------- FORM ---------- */
+    .form-container {
+      margin: 140px auto 50px;
+      max-width: 500px;
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .form-container h2 {
+      margin-bottom: 25px;
+      color: #4f86ed;
+    }
+
+    table {
+      width: 100%;
+      border-spacing: 15px;
+    }
+
+    td {
+      text-align: left;
+      font-size: 15px;
+      color: #555;
+    }
+
+    input[type="number"],
+    input[type="text"],
+    select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+      transition: 0.3s;
+      font-size: 15px;
+      color: #333;
+      background-color: #fff;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: #4f86ed;
+      box-shadow: 0 0 5px rgba(79, 134, 237, 0.3);
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      margin-top: 10px;
+      background: #4f86ed;
+      border: none;
+      color: #fff;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      background: #3a6fd1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <a href="/" class="logo">📚 LibrarySphere</a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="#">Books</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#">FAQ</a>
+    </nav>
+    <a href="/add-book" class="add-btn">+ Add Book</a>
+  </header>
+
+  <!-- ADD BOOK FORM -->
+  <div class="form-container">
+    <h2>Add New Book Details</h2>
+    <form action="/add-book" method="post">
+      <table>
+        <tr>
+          <td>Image URL:</td>
+          <td><input type="text" name="image" placeholder="Enter image URL" /></td>
+        </tr>
+        <tr>
+          <td>Book ID:</td>
+          <td><input type="text" name="id" placeholder="Enter your id" /></td>
+        </tr>
+        <tr>
+          <td>Title:</td>
+          <td><input type="text" name="title" placeholder="Enter your title" /></td>
+        </tr>
+        <tr>
+          <td>Author:</td>
+          <td><input type="text" name="author" placeholder="Enter author" /></td>
+        </tr>
+        <tr>
+          <td>Language:</td>
+          <td>
+            <select name="language">
+              <option value="" disabled selected>Select your language</option>
+              <option value="English">English</option>
+              <option value="Hindi">Hindi</option>
+              <option value="Spanish">Spanish</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Publication Year:</td>
+          <td><input type="number" name="year" placeholder="Enter year" /></td>
+        </tr>
+        <tr>
+          <td colspan="2"><input type="submit" value="Add Book" /></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</body>
+
+</html>
