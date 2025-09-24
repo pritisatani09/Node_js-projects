@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit Book</title>
+  <style>
+    body {
+      background-color: #f4f6fc;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 50px;
+      background: rgb(84, 80, 205);
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 30px;
+      font-weight: 700;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #f9f9f9;
+      font-weight: 500;
+      padding: 8px 14px;
+      border-radius: 8px;
+      transition: 0.3s ease;
+    }
+
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: #ffe98a;
+    }
+
+    .add-btn {
+      background: #ffffff;
+      color: #2d68ff;
+      padding: 10px 18px;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .add-btn:hover {
+      background: #e9efff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+    }
+
+    .form-container {
+      max-width: 600px;
+      margin: 120px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    table {
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    td {
+      padding: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    button {
+      margin-top: 15px;
+      background-color: #4f86ed;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #3b6fcb;
+    }
+    
+    hr {
+      margin: 60px auto;
+      width: 90%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="/" class="logo">📚 LibrarySphere</a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="#">Books</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#">FAQ</a>
+    </nav>
+    <a href="/add-book" class="add-btn">+ Add Book</a>
+  </header>
+
+  <div class="form-container">
+    <h2>Edit Book Details</h2>
+    <form action="/update-book/<%= book._id %>" method="POST">
+      <table>
+        <tr>
+          <td>Title:</td>
+          <td><input type="text" name="title" value="<%= book.title %>" required></td>
+        </tr>
+        <tr>
+          <td>Author:</td>
+          <td><input type="text" name="author" value="<%= book.author %>" required></td>
+        </tr>
+        <tr>
+          <td>Price:</td>
+          <td><input type="number" name="price" value="<%= book.price %>" required></td>
+        </tr>
+        <tr>
+          <td>Category:</td>
+          <td><input type="text" name="category" value="<%= book.category %>" required></td>
+        </tr>
+        <tr>
+          <td>Image URL:</td>
+          <td><input type="text" name="image" value="<%= book.image %>" required></td>
+        </tr>
+        <tr>
+          <td>Publisher:</td>
+          <td><input type="text" name="publisher" value="<%= book.publisher %>" required></td>
+        </tr>
+        <tr>
+          <td>Publication Year:</td>
+          <td><input type="number" name="publicationYear" value="<%= book.publicationYear %>" required></td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center"><button type="submit">Update Book</button></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+
+</body>
+</html>
