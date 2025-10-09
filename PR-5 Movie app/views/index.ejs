@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie App</title>
+    <style>
+        /* ============================
+   BookMyShow - Home Page Styles
+   Modern, Polished UI
+============================ */
+        /* ============================
+   BookMyShow - Home Page (Keep Old Cards)
+============================ */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            background-color: #f8f8f8;
+            color: #222;
+        }
+
+        /* ============================
+   Header
+============================ */
+        .main-header {
+            background: #ffffff;
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .main-header .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 130px;
+            margin-top: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo img:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #444;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            padding-bottom: 3px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0%;
+            height: 2px;
+            background-color: #e31c25;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #e31c25;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* ============================
+   Filter Section
+============================ */
+        .filter-section {
+            background-color: #fff;
+            box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .filter-section .container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .category {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-left: 10px;
+        }
+
+        .filter-btn {
+            padding: 8px 14px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 6px;
+            border: 1px solid #e31c25;
+            color: #e31c25;
+            background-color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            background-color: #e31c25;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        /* ============================
+   Search Section
+============================ */
+        .search-bar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .search-bar input {
+            width: 250px;
+            padding: 10px 12px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            background: #fff;
+            color: #000;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .search-bar input:focus {
+            border-color: #e31c25;
+            outline: none;
+            box-shadow: 0 0 4px rgba(227, 28, 37, 0.2);
+        }
+
+        .search-btn {
+            padding: 9px 16px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 6px;
+            border: none;
+            background-color: #e31c25;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .search-btn:hover {
+            background-color: #fff;
+            color: #e31c25;
+            border: 1px solid #e31c25;
+            transform: translateY(-2px);
+        }
+
+        /* ============================
+   Keep Old Movie Card Styles
+============================ */
+        .movie-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 40px 20px;
+            max-width: 1300px;
+            margin: auto;
+            justify-content: center;
+        }
+
+        .movie-card {
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 280px;
+            border: 1px solid #ddd;
+        }
+
+        .movie-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .movie-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background-color: #f5f5f5;
+            border-bottom: 1px solid #eee;
+        }
+
+        .movie-content {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .movie-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #222;
+        }
+
+        .movie-info {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 6px;
+        }
+
+        .button-group {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .action-btn {
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: white;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .edit-btn {
+            background-color: #6c6f6d;
+        }
+
+        .edit-btn:hover {
+            background-color: #218838;
+        }
+
+        .delete-btn {
+            background-color: #e31c25;
+        }
+
+        .delete-btn:hover {
+            background-color: #c0171d;
+        }
+
+        /* ============================
+   Responsive
+============================ */
+        @media (max-width: 992px) {
+            .movie-card {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .movie-card {
+                width: 90%;
+            }
+
+            .filter-section .container {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .search-bar input {
+                width: 180px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .movie-card {
+                width: 100%;
+            }
+
+            .search-bar input {
+                width: 140px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <header class="main-header">
+        <div class="container">
+            <a href="/" class="logo">
+                <img src="https://cdn.prod.website-files.com/600ee75084e3fe0e5731624c/65b6384089ec9e265952391f_bookmyshow-logo-vector-removebg-preview%20(1).png"
+                    alt="logo">
+            </a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/add">Add Movie</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="filter-section ">
+        <div class="container d-flex">
+            <div class="category">
+                <!-- category -->
+                <div class="mb-3">
+                    <form action="/" method="get" style="display:inline-block;">
+                        <input type="hidden" name="category" value="Bollywood">
+                        <button type="submit" class="mx-1 filter-btn">Bollywood</button>
+                    </form>
+
+                    <form action="/" method="get" style="display:inline-block;">
+                        <input type="hidden" name="category" value="Hollywood">
+                        <button type="submit" class="mx-1 filter-btn">Hollywood</button>
+                    </form>
+
+                    <form action="/" method="get" style="display:inline-block;">
+                        <input type="hidden" name="category" value="Tollywood">
+                        <button type="submit" class="mx-1 filter-btn">Tollywood</button>
+                    </form>
+
+                    <form action="/" method="get" style="display:inline-block;">
+                        <input type="hidden" name="category" value="Gujarati">
+                        <button type="submit" class="mx-1 filter-btn">Gujarati</button>
+                    </form>
+
+                    <form action="/" method="get" style="display:inline-block;">
+                        <input type="hidden" name="category" value="">
+                        <button type="submit" class="mx-1 filter-btn">All</button>
+                    </form>
+                </div>
+            </div>
+
+
+            <div class="search">
+
+                <!-- search -->
+                <div class="search-bar mt-5">
+                    <form class="d-flex">
+                        <input type="text" name="search" placeholder="search here" />
+                        <button type="submit" class="search-btn">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="movie-grid">
+    <% allMovies.forEach((movie)=> { %>
+        <div class="movie-card">
+            <a href="#">
+                <img src="<%= movie.image %>" alt="<%= movie.title %>">
+            </a>
+            <div class="movie-content">
+                <div class="movie-title"><%= movie.title %></div>
+                <div class="movie-info"><strong>Director:</strong> <%= movie.director %></div>
+                <div class="movie-info"><strong>Genre:</strong> <%= movie.genre %></div>
+                <div class="movie-info"><strong>Year:</strong> <%= movie.year %></div>
+                <div class="movie-info"><strong>Category:</strong> <%= movie.category %></div>
+                <div class="button-group">
+                    <a href="/edit-movie/<%= movie.id %>" class="action-btn edit-btn">Edit</a>
+                    <a href="/delete-movie/<%= movie.id %>" class="action-btn delete-btn">Delete</a>
+                    <a href="/view-movie/<%= movie._id %>" class="action-btn delete-btn">View</a>
+                </div>
+            </div>
+        </div>
+    <% }); %>
+</div>
+
+</body>
+
+</html>

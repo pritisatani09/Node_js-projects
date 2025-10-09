@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title><%= movie.title %> | Movie Details</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+   * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #ffffff;
+      color: #222;
+    }
+
+    /* Header */
+    .main-header {
+      background: #ffffff;
+      padding: 12px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .main-header .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 60px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: #444;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 16px;
+      transition: color 0.3s ease, border-bottom 0.3s ease;
+      padding-bottom: 3px;
+    }
+
+    .nav-links a:hover {
+      color: #e31c25;
+      border-bottom: 2px solid #e31c25;
+    }
+
+
+.back-btn {
+  display: inline-block;
+  margin: 25px 0 20px 20px;
+  padding: 8px 16px;
+  background-color: #e31c25;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 16px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #e31c25;
+}
+
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.view-wrapper {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.movie {
+  flex: 1;
+  min-width: 280px;
+  max-width: 380px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+
+.details h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  margin-bottom: 15px;
+  color: #e31c25; 
+}
+
+.detail-label {
+  font-weight: 600;
+  color: #0e0e0e;
+  padding-right: 5px;
+}
+
+.detail-value {
+  color: #0c0c0c;
+}
+
+.description {
+  margin-top: 20px;
+  font-size: 15px;
+  color: #000000; 
+  line-height: 1.7;
+}
+
+
+
+@media (max-width: 768px) {
+  .view-wrapper {
+    flex-direction: column;
+  }
+
+  .movie {
+    max-width: 100%;
+    margin: auto;
+  }
+}
+
+  </style>
+</head>
+<body>
+ <header class="main-header">
+    <div class="container">
+      <a href="/" class="logo"><img src="https://cdn.prod.website-files.com/600ee75084e3fe0e5731624c/65b6384089ec9e265952391f_bookmyshow-logo-vector-removebg-preview%20(1).png" alt="logo" height="50px"></a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/add">Add Movie</a>
+      </div>
+    </div>
+  </header>
+ 
+  <a href="/" class="back-btn">&larr; Back to Home</a>
+
+  <div class="container">
+    <div class="view-wrapper">
+      <img src="/<%= movie.image %>" alt="Movie Cover" class="movie"/>
+
+      <div class="details">
+        <h2><%= movie.title %></h2>
+
+        <div class="detail-row"><span class="detail-label">Director:</span> <span class="detail-value"><%= movie.director %></span></div>  
+        <div class="detail-row"><span class="detail-label">Genre:</span> <span class="detail-value"><%= movie.genre %></span></div>
+        <!-- <div class="detail-row"><span class="detail-label">Cast:</span> <span class="detail-value"><%= movie.cast %></span></div> -->
+        <div class="detail-row"><span class="detail-label">Released Year:</span> <span class="detail-value"><%= movie.year %></span></div>
+
+        <div class="description">
+          <span class="detail-label">Description:</span>
+          <p><%= movie.description %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+

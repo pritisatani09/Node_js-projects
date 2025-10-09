@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Movie</title>
+
+  <style>
+    /* ============================
+       Common header (use this on all pages)
+    ============================ */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #ffffff;
+      color: #222;
+    }
+
+    /* Header */
+    .main-header {
+      background: #ffffff;
+      padding: 12px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .main-header .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo img {
+      width: 130px;
+      margin-top: 5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: #444;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 16px;
+      transition: color 0.3s ease, border-bottom 0.3s ease;
+      padding-bottom: 3px;
+      margin-top: 3px;
+    }
+
+    .nav-links a:hover {
+      color: #e31c25;
+      border-bottom: 2px solid #e31c25;
+    }
+
+    /* Form */
+    .form-container {
+      max-width: 550px;
+      margin: 40px auto;
+      padding: 25px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 28px;
+      color: #000;
+      font-weight: 600;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="number"],
+    .form-group input[type="file"],
+    .form-group select {
+      width: 96%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #bbb;
+      background: #fff;
+      color: #000;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: #e31c25;
+      box-shadow: 0 0 5px rgba(40, 167, 69, 0.3);
+      outline: none;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 12px;
+      background: #e31c25;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .submit-btn:hover {
+      background: #ab3238;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="main-header">
+    <div class="container">
+      <a href="/" class="logo">
+        <img src="https://cdn.prod.website-files.com/600ee75084e3fe0e5731624c/65b6384089ec9e265952391f_bookmyshow-logo-vector-removebg-preview%20(1).png"
+          alt="logo">
+      </a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/add">Add Movie</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="form-container">
+    <h2>Add Movie</h2>
+    <form action="/add-movie" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="title">Movie Title:</label>
+        <input type="text" id="title" name="title" required>
+      </div>
+      <div class="form-group">
+        <label for="director">Director:</label>
+        <input type="text" id="director" name="director" required>
+      </div>
+      <div class="form-group">
+        <label>Description:</label>
+        <input type="text" name="description" required>
+      </div>
+      <div class="form-group">
+        <label>Genre:</label>
+        <input type="text" name="genre" required>
+      </div>
+      <div class="form-group">
+        <label for="year">Release Year:</label>
+        <input type="number" id="year" name="year" required>
+      </div>
+      <div class="form-group">
+        <label for="category">Category:</label>
+        <select id="category" name="category" required>
+          <option value="">--Select Category--</option>
+          <option value="Hollywood">Hollywood</option>
+          <option value="Bollywood">Bollywood</option>
+          <option value="Tollywood">Tollywood</option>
+          <option value="Gujarati">Gujarati</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Image:</label>
+        <input type="file" name="image" required>
+      </div>
+      <button type="submit" class="submit-btn">Add Movie</button>
+    </form>
+  </div>
+
+</body>
+
+</html>
