@@ -91,7 +91,7 @@ exports.updateBlog = async (req, res) => {
         const oldImage = path.join(__dirname, "..", blog.image);
         try {
           fs.unlinkSync(oldImage);
-        } catch {}
+        } catch { }
       }
       // Fixed invalid template string
       req.body.image = `/uploads/${req.file.filename}`;
@@ -125,13 +125,13 @@ exports.deleteBlog = async (req, res) => {
       }
 
       // Delete blog
-      await Blog.findByIdAndDelete(req.params.id);
+    await Blog.findByIdAndDelete(req.params.id);
       console.log("Blog deleted successfully.");
-    } else {
+    }else {
       console.log("Blog not found.");
     }
 
-    // ✅ Redirect to My Blogs page (no redirect loop)
+// Redirect to My Blogs page (no redirect loop)
     return res.redirect("/blog/my-blogs");
   } catch (error) {
     console.error("Error deleting blog:", error);
