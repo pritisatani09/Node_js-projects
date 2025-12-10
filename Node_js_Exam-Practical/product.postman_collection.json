@@ -1,0 +1,510 @@
+{
+	"info": {
+		"_postman_id": "6e4d98aa-6127-4f5d-9152-523f7eeda5d0",
+		"name": "product",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47350911"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "firstname",
+									"value": "mina",
+									"type": "text"
+								},
+								{
+									"key": "lastname",
+									"value": "patel",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "mina@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345",
+									"type": "text"
+								},
+								{
+									"key": "mobileno",
+									"value": "1234567890",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "Admin",
+									"type": "text"
+								},
+								{
+									"key": "profileImage",
+									"type": "file",
+									"src": "/C:/Users/DELL/OneDrive/Pictures/Screenshots/Screenshot (70).png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/E-commerce/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"E-commerce",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "mina@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/E-commerce/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"E-commerce",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTM5MDI0NTg0N2M0YzE1Y2U3Y2RiZTMiLCJpYXQiOjE3NjUzNDQyNTgsImV4cCI6MTc2NTQzMDY1OH0.DVppylXQyBIjMOnXFD8COdrzDor7qI-PcpF9c69V0ig",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "mina@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/E-commerce/auth/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"E-commerce",
+								"auth",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "edit admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTM5MDI0NTg0N2M0YzE1Y2U3Y2RiZTMiLCJpYXQiOjE3NjUzNDQyNTgsImV4cCI6MTc2NTQzMDY1OH0.DVppylXQyBIjMOnXFD8COdrzDor7qI-PcpF9c69V0ig",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "vani@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/E-commerce/admin/Editadmin/69390245847c4c15ce7cdbe3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"E-commerce",
+								"admin",
+								"Editadmin",
+								"69390245847c4c15ce7cdbe3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "edit user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTM5MDI0NTg0N2M0YzE1Y2U3Y2RiZTMiLCJpYXQiOjE3NjUzNDQyNTgsImV4cCI6MTc2NTQzMDY1OH0.DVppylXQyBIjMOnXFD8COdrzDor7qI-PcpF9c69V0ig",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "mina@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/E-commerce/user/Edituser/69390245847c4c15ce7cdbe3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"E-commerce",
+								"user",
+								"Edituser",
+								"69390245847c4c15ce7cdbe3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTM5MDI0NTg0N2M0YzE1Y2U3Y2RiZTMiLCJpYXQiOjE3NjUzNDQyNTgsImV4cCI6MTc2NTQzMDY1OH0.DVppylXQyBIjMOnXFD8COdrzDor7qI-PcpF9c69V0ig",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost:8000/E-commerce/user/Deleteuser/69390245847c4c15ce7cdbe3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"E-commerce",
+								"user",
+								"Deleteuser",
+								"69390245847c4c15ce7cdbe3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view all user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTM5MDI0NTg0N2M0YzE1Y2U3Y2RiZTMiLCJpYXQiOjE3NjUzNDQyNTgsImV4cCI6MTc2NTQzMDY1OH0.DVppylXQyBIjMOnXFD8COdrzDor7qI-PcpF9c69V0ig",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/E-commerce/user/viewAllUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"E-commerce",
+								"user",
+								"viewAllUser"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "add product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTM5MDI0NTg0N2M0YzE1Y2U3Y2RiZTMiLCJpYXQiOjE3NjUzNDQyNTgsImV4cCI6MTc2NTQzMDY1OH0.DVppylXQyBIjMOnXFD8COdrzDor7qI-PcpF9c69V0ig",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "chocolate",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "yummy alomand",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "90",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "Food",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/DELL/OneDrive/Pictures/Screenshots/Screenshot (70).png"
+								},
+								{
+									"key": "stock",
+									"value": "10",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/E-commerce/product/Addproduct",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"E-commerce",
+								"product",
+								"Addproduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit product",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "delete product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTM5MDI0NTg0N2M0YzE1Y2U3Y2RiZTMiLCJpYXQiOjE3NjUzNDQyNTgsImV4cCI6MTc2NTQzMDY1OH0.DVppylXQyBIjMOnXFD8COdrzDor7qI-PcpF9c69V0ig",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost:8000/E-commerce/product/Deleteproduct/693846870987126982ddbfe1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"E-commerce",
+								"product",
+								"Deleteproduct",
+								"693846870987126982ddbfe1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view all product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTM5MDI0NTg0N2M0YzE1Y2U3Y2RiZTMiLCJpYXQiOjE3NjUzNDQyNTgsImV4cCI6MTc2NTQzMDY1OH0.DVppylXQyBIjMOnXFD8COdrzDor7qI-PcpF9c69V0ig",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/E-commerce/product/viewallproduct",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"E-commerce",
+								"product",
+								"viewallproduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view single product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTM5MDI0NTg0N2M0YzE1Y2U3Y2RiZTMiLCJpYXQiOjE3NjUzNDQyNTgsImV4cCI6MTc2NTQzMDY1OH0.DVppylXQyBIjMOnXFD8COdrzDor7qI-PcpF9c69V0ig",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/E-commerce/product/viewSingleProduct/693907b345d6a73b3bdffd7f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"E-commerce",
+								"product",
+								"viewSingleProduct",
+								"693907b345d6a73b3bdffd7f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
